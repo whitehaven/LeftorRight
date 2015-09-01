@@ -12,8 +12,6 @@ print (sys.argv[1])
 
 dictionaryFile = open(sys.argv[1])
 
-
-
 trialWord = dictionaryFile.readline()
 
 while trialWord != "":
@@ -23,7 +21,13 @@ while trialWord != "":
     for letter in trialWord:
         print(letter)
         if letter in leftHand:
-            print("Left Hand Letter")
+            leftTrialWord = trialWord[1:]
+            for letterLeft in leftTrialWord:
+                if letterLeft in rightHand:
+                    print("Neither-hand: ", trialWord)
+                    break
+
+
         elif letter in rightHand:
             print("Right Hand Letter")
     trialWord = dictionaryFile.readline()
