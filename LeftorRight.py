@@ -12,13 +12,18 @@ print (sys.argv[1])
 
 dictionaryFile = open(sys.argv[1])
 
+
+
 trialWord = dictionaryFile.readline()
 
-trialWord.lower()
+while trialWord != "":
 
-for letter in trialWord:
-    print(letter)
-    if letter in leftHand:
-        print("Left Hand Letter")
-    elif letter in rightHand:
-        print("Right Hand Letter")
+    trialWord.lower()
+
+    for letter in trialWord:
+        print(letter)
+        if letter in leftHand:
+            print("Left Hand Letter")
+        elif letter in rightHand:
+            print("Right Hand Letter")
+    trialWord = dictionaryFile.readline()
