@@ -30,10 +30,12 @@ def rightCheck(word, index):
         return False
 
 
-dictionaryFile = open(sys.argv[1])
+scriptName, dictionaryFileL, leftFileL, rightFileL = sys.argv
 
-leftFile = open(sys.argv[2], 'w')
-rightFile = open(sys.argv[3], 'w')
+dictionaryFile = open(dictionaryFileL)
+
+leftFile = open(leftFileL, 'w')
+rightFile = open(rightFileL, 'w')
 
 leftCount = 0
 rightCount = 0
