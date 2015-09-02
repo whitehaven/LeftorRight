@@ -58,6 +58,6 @@ while trialWord != "":
 totalCount = neitherCount + rightCount + leftCount
 
 print("Total Words: %d" % (totalCount))
-print("Right Words: %d (%.2f)" % (rightCount, float(rightCount) / float(totalCount) ) )
-print("Left Words: %d (%.2f)" % (leftCount, float(leftCount) / float(totalCount) ))
-print("Neither Words: %d (%.2f)" % (neitherCount, float(neitherCount) / float(totalCount) ))
+print("Right Words: %d (%.3f%%)" % (rightCount, float(rightCount) / float(totalCount) ) )
+print("Left Words: %d (%.3f%%)" % (leftCount, float(leftCount) / float(totalCount) ))
+print("Neither Words: %d (%.3f%%)" % (neitherCount, float(neitherCount) / float(totalCount) ))
