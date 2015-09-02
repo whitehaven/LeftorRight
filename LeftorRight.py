@@ -30,16 +30,34 @@ def rightCheck(word, index):
         return False
 
 
-print(sys.argv[0])
-print(sys.argv[1])
-
 dictionaryFile = open(sys.argv[1])
+
+leftFile = open(sys.argv[2], 'w')
+rightFile = open(sys.argv[3], 'w')
+
+leftCount = 0
+rightCount = 0
+neitherCount = 0
 
 trialWord = dictionaryFile.readline()
 
 while trialWord != "":
     trialWord.lower()
 
-    print(trialWord, "   ", leftCheck(trialWord, 0), rightCheck(trialWord, 0))
+    if leftCheck(trialWord,0):
+        leftCount += 1
+        leftFile.write(trialWord)
+    elif rightCheck(trialWord,0):
+        rightCount += 1
+        rightFile.write(trialWord)
+    else:
+        neitherCount += 1
 
     trialWord = dictionaryFile.readline()
+
+totalCount = neitherCount + rightCount + leftCount
+
+print("Total Words: %d" % (totalCount))
+print("Right Words: %d (%.2f)" % (rightCount, float(rightCount) / float(totalCount) ) )
+print("Left Words: %d (%.2f)" % (leftCount, float(leftCount) / float(totalCount) ))
+print("Neither Words: %d (%.2f)" % (neitherCount, float(neitherCount) / float(totalCount) ))
