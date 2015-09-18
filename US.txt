@@ -1216,7 +1216,7 @@ byte
 cabs
 cads
 cafe
-café
+cafe
 cage
 cagy
 cain
@@ -8574,7 +8574,6 @@ sewed
 sewer
 sexed
 sexes
-señor
 shack
 shade
 shads
@@ -15355,7 +15354,7 @@ mayhap
 mayhem
 mayors
 mazier
-mañana
+manana
 mccall
 meadow
 meager
@@ -17531,7 +17530,7 @@ rustle
 rutted
 rwanda
 ryukyu
-résumé
+resume
 sabers
 sables
 sabras
@@ -17844,8 +17843,8 @@ sexpot
 sextet
 sexton
 sexual
-señora
-señors
+senora
+senors
 shabby
 shacks
 shaded
@@ -31448,8 +31447,8 @@ sexpots
 sextans
 sextant
 sextets
-señoras
-señores
+senoras
+senores
 shacked
 shacker
 shackle
@@ -47556,7 +47555,7 @@ sexology
 sextants
 sextuple
 sexually
-señorita
+senorita
 shabbier
 shabbily
 shacking
@@ -64444,7 +64443,7 @@ sextuples
 sextuplet
 sexuality
 sexualize
-señoritas
+senoritas
 shabbiest
 shacklers
 shackling
