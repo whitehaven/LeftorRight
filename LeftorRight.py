@@ -1,9 +1,3 @@
-__author__ = 'WhiteHaven'
-
-"""
-Note that each word must include a newline, including the last one.
-"""
-
 import argparse
 
 leftHand = {'q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b'}
@@ -62,8 +56,6 @@ for trialWord in trialWords:
         rightFile.write(trialWord)
     else:
         neitherCount += 1
-
-    trialWord = dictionaryFile.readline()
 
 totalCount = neitherCount + rightCount + leftCount
 
