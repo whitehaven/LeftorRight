@@ -222,6 +222,7 @@ brew
 cabs
 cads
 cafe
+cafe
 cage
 card
 care

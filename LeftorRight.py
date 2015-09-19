@@ -4,10 +4,19 @@ __author__ = 'WhiteHaven'
 Note that each word must include a newline, including the last one.
 """
 
-import sys
+import argparse
 
 leftHand = {'q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b'}
 rightHand = {'y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'l', 'n', 'm'}
+
+parser = argparse.ArgumentParser(
+    description="Find words that can be typed with the left or right-hand. "
+                "Makes for fast-typed passwords that are hard to guess from watching them typed.")
+parser.add_argument("DICTIONARY", help="dictionary file to use")
+parser.add_argument("LEFT", help="write left-handed words to file")
+parser.add_argument("RIGHT", help="write right-handed words to file")
+
+args = parser.parse_args()
 
 
 def leftCheck(word, index):
@@ -28,21 +37,22 @@ def rightCheck(word, index):
         return False
 
 
-scriptName, dictionaryFileL, leftFileL, rightFileL = sys.argv
+dictionaryFileName = args.DICTIONARY
+leftFileName = args.LEFT
+rightFileName = args.RIGHT
 
-dictionaryFile = open(dictionaryFileL, 'r')
+dictionaryFile = open(dictionaryFileName, 'r')
 
-leftFile = open(leftFileL, 'w')
-rightFile = open(rightFileL, 'w')
+leftFile = open(leftFileName, 'w')
+rightFile = open(rightFileName, 'w')
 
 leftCount = 0
 rightCount = 0
 neitherCount = 0
 
-trialWord = dictionaryFile.readline()
+trialWords = dictionaryFile.readlines()
 
-while trialWord != "":
-    trialWord.lower()
+for trialWord in trialWords:
 
     if leftCheck(trialWord, 0):
         leftCount += 1
@@ -58,6 +68,6 @@ while trialWord != "":
 totalCount = neitherCount + rightCount + leftCount
 
 print("Total Words: %d" % (totalCount))
-print("Right Words: %d (%.3f%%)" % (rightCount, float(rightCount) / float(totalCount)))
-print("Left Words: %d (%.3f%%)" % (leftCount, float(leftCount) / float(totalCount)))
-print("Neither Words: %d (%.3f%%)" % (neitherCount, float(neitherCount) / float(totalCount)))
+print("Right Words: %d (%.3f%%)" % (rightCount, float(rightCount) / float(totalCount) * 100.0))
+print("Left Words: %d (%.3f%%)" % (leftCount, float(leftCount) / float(totalCount) * 100.0))
+print("Neither Words: %d (%.3f%%)" % (neitherCount, float(neitherCount) / float(totalCount) * 100.0))
