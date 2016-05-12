@@ -36,6 +36,8 @@ leftFileName = args.LEFT
 rightFileName = args.RIGHT
 
 dictionaryFile = open(dictionaryFileName, 'r')
+trialWords = dictionaryFile.readlines()
+dictionaryFile.close()
 
 leftFile = open(leftFileName, 'w')
 rightFile = open(rightFileName, 'w')
@@ -43,8 +45,6 @@ rightFile = open(rightFileName, 'w')
 leftCount = 0
 rightCount = 0
 neitherCount = 0
-
-trialWords = dictionaryFile.readlines()
 
 for trialWord in trialWords:
 
