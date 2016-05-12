@@ -57,6 +57,9 @@ for trialWord in trialWords:
     else:
         neitherCount += 1
 
+leftFile.close()
+rightFile.close()
+
 totalCount = neitherCount + rightCount + leftCount
 
 print("Total Words: %d" % (totalCount))
